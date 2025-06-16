@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оборудование - Abak2000</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Шапка сайта */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            background-color: #005baa;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #005baa;
+        }
+        
+        /* Основной контент */
+        .page-header {
+            background-color: #005baa;
+            color: white;
+            padding: 120px 0 60px;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .equipment-section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #005baa;
+            font-size: 32px;
+        }
+        
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .equipment-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .equipment-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .equipment-img {
+            height: 200px;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #005baa;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .equipment-content {
+            padding: 20px;
+        }
+        
+        .equipment-content h3 {
+            color: #005baa;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .equipment-content p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        .equipment-price {
+            font-weight: bold;
+            font-size: 18px;
+            color: #ff6b00;
+            margin-bottom: 15px;
+        }
+        
+        .equipment-btn {
+            display: inline-block;
+            background-color: #005baa;
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .equipment-btn:hover {
+            background-color: #003366;
+        }
+        
+        /* Футер */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #ff6b00;
+        }
+        
+        .footer-column p,
+        .footer-column a {
+            margin-bottom: 10px;
+            display: block;
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .footer-column a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #1a4d80;
+            color: #ccc;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">ABAK2000</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="equipment.html">Оборудование</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Заголовок страницы -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Оборудование</h1>
+            <p>Профессиональные системы безопасности от ведущих производителей</p>
+        </div>
+    </section>
+
+    <!-- Список оборудования -->
+    <section class="equipment-section">
+        <div class="container">
+            <h2 class="section-title">Каталог оборудования</h2>
+            
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <div class="equipment-img">IP-камера</div>
+                    <div class="equipment-content">
+                        <h3>IP-камера Hikvision DS-2CD2143G0-I</h3>
+                        <p>4 Мп, ИК-подсветка до 30 м, защита IP67</p>
+                        <div class="equipment-price">12 490 ₽</div>
+                        <a href="#" class="equipment-btn">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-img">Видеорегистратор</div>
+                    <div class="equipment-content">
+                        <h3>Видеорегистратор Dahua XVR5104HS</h3>
+                        <p>4-канальный, поддержка 5 Мп камер, H.265</p>
+                        <div class="equipment-price">24 990 ₽</div>
+                        <a href="#" class="equipment-btn">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-img">Датчик движения</div>
+                    <div class="equipment-content">
+                        <h3>Датчик движения Ajax MotionProtect</h3>
+                        <p>Дальность до 12 м, угол обзора 110°, защита от животных</p>
+                        <div class="equipment-price">5 990 ₽</div>
+                        <a href="#" class="equipment-btn">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-img">Контроллер доступа</div>
+                    <div class="equipment-content">
+                        <h3>Контроллер PERCo-IC-03</h3>
+                        <p>Управление 2 дверьми, 5000 пользователей, 100 000 событий</p>
+                        <div class="equipment-price">18 750 ₽</div>
+                        <a href="#" class="equipment-btn">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-img">Домофон</div>
+                    <div class="equipment-content">
+                        <h3>Видеодомофон Commax CDV-35A</h3>
+                        <p>7" дисплей, сенсорное управление, память на 1000 лиц</p>
+                        <div class="equipment-price">32 490 ₽</div>
+                        <a href="#" class="equipment-btn">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="equipment-card">
+                    <div class="equipment-img">Источник питания</div>
+                    <div class="equipment-content">
+                        <h3>Блок питания BEWARD BPS-12V5A</h3>
+                        <p>12В 5А, защита от перегрузки, корпус для DIN-рейки</p>
+                        <div class="equipment-price">3 290 ₽</div>
+                        <a href="#" class="equipment-btn">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <p>Телефон: +7 (123) 456-78-90</p>
+                    <p>Email: info@abak2000.ru</p>
+                    <p>Адрес: г. Москва, ул. Безопасная, д. 2000</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Компания</h3>
+                    <a href="about.html">О нас</a>
+                    <a href="#">Наша команда</a>
+                    <a href="#">Лицензии</a>
+                    <a href="#">Отзывы</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Документы</h3>
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Договор оферты</a>
+                    <a href="#">Реквизиты</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 ABAK2000. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

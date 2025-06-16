@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abak2000 - Системы безопасности и видеонаблюдение</title>
+    <style>
+        /* Общие стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Шапка сайта */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            background-color: #005baa;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #005baa;
+        }
+        
+        /* Главный баннер */
+        .banner {
+            background-color: #f5f5f5;
+            padding: 150px 0 100px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .banner h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #005baa;
+        }
+        
+        .banner p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Блок услуг */
+        .services {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #005baa;
+            font-size: 32px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-item {
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            transition: transform 0.3s;
+            cursor: pointer;
+            padding: 20px;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-1 {
+            background-color: #005baa;
+        }
+        
+        .service-2 {
+            background-color: #ff6b00;
+        }
+        
+        .service-3 {
+            background-color: #005baa;
+        }
+        
+        .service-4 {
+            background-color: #777;
+        }
+        
+        /* Форма заявки */
+        .contact-form {
+            background-color: #f5f5f5;
+            padding: 80px 0;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #005baa;
+            font-size: 28px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: #ff6b00;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #e05d00;
+        }
+        
+        /* Футер */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #ff6b00;
+        }
+        
+        .footer-column p,
+        .footer-column a {
+            margin-bottom: 10px;
+            display: block;
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .footer-column a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #1a4d80;
+            color: #ccc;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .banner h1 {
+                font-size: 32px;
+            }
+            
+            .service-item {
+                height: 200px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">ABAK2000</a>
+            <nav>
+                <ul>
+                    <li><a href="#main">Главная</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#equipment">Оборудование</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Главный баннер -->
+    <section class="banner" id="main">
+        <div class="container">
+            <h1>Надежные решения для вашей безопасности</h1>
+            <p>Комплексные системы видеонаблюдения, охранные сигнализации и контроль доступа для бизнеса и частных объектов</p>
+        </div>
+    </section>
+
+    <!-- Блок услуг -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Наши услуги</h2>
+            <div class="services-grid">
+                <div class="service-item service-1">Видеонаблюдение</div>
+                <div class="service-item service-2">Охранные системы</div>
+                <div class="service-item service-3">Контроль доступа</div>
+                <div class="service-item service-4">Техподдержка</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма заявки -->
+    <section class="contact-form" id="contact">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="form-title">Заказать консультацию</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Комментарий</label>
+                        <textarea id="comment"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Заказать консультацию</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <p>Телефон: +7 (123) 456-78-90</p>
+                    <p>Email: info@abak2000.ru</p>
+                    <p>Адрес: г. Москва, ул. Безопасная, д. 2000</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Компания</h3>
+                    <a href="#">О нас</a>
+                    <a href="#">Наша команда</a>
+                    <a href="#">Лицензии</a>
+                    <a href="#">Отзывы</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Документы</h3>
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Договор оферты</a>
+                    <a href="#">Реквизиты</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 ABAK2000. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

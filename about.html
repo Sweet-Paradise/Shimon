@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О компании - Abak2000</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Шапка сайта */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            background-color: #005baa;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #005baa;
+        }
+        
+        /* Основной контент */
+        .page-header {
+            background-color: #005baa;
+            color: white;
+            padding: 120px 0 60px;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .about-section {
+            padding: 80px 0;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        
+        .about-text h2 {
+            color: #005baa;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .about-features {
+            background-color: #f5f5f5;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .feature-item {
+            display: flex;
+            margin-bottom: 25px;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #005baa;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        .feature-text h3 {
+            color: #005baa;
+            margin-bottom: 10px;
+        }
+        
+        .stats-section {
+            background-color: #005baa;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .stat-item h3 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: #ff6b00;
+        }
+        
+        .stat-item p {
+            font-size: 18px;
+        }
+        
+        .team-section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #005baa;
+            font-size: 32px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .team-img {
+            height: 200px;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #005baa;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .team-info {
+            padding: 20px;
+        }
+        
+        .team-info h3 {
+            color: #005baa;
+            margin-bottom: 5px;
+        }
+        
+        .team-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        /* Футер */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #ff6b00;
+        }
+        
+        .footer-column p,
+        .footer-column a {
+            margin-bottom: 10px;
+            display: block;
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .footer-column a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #1a4d80;
+            color: #ccc;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">ABAK2000</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="equipment.html">Оборудование</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Заголовок страницы -->
+    <section class="page-header">
+        <div class="container">
+            <h1>О компании</h1>
+            <p>Профессионалы в области систем безопасности с 2000 года</p>
+        </div>
+    </section>
+
+    <!-- О компании -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Наша история</h2>
+                    <p>Компания Abak2000 была основана в 2000 году с целью предоставления качественных решений в области безопасности для бизнеса и частных клиентов. Начиная с небольших проектов по установке видеонаблюдения, мы выросли в компанию с полным циклом услуг - от проектирования до обслуживания сложных систем безопасности.</p>
+                    <p>За годы работы мы реализовали более 1000 проектов различной сложности, накопили значительный опыт и сформировали команду высококвалифицированных специалистов.</p>
+                    <p>Наша миссия - обеспечивать безопасность клиентов с использованием современных технологий и индивидуального подхода к каждому проекту.</p>
+                </div>
+                
+                <div class="about-features">
+                    <h2>Наши преимущества</h2>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">1</div>
+                        <div class="feature-text">
+                            <h3>Опыт</h3>
+                            <p>Более 20 лет на рынке систем безопасности</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">2</div>
+                        <div class="feature-text">
+                            <h3>Качество</h3>
+                            <p>Используем только сертифицированное оборудование</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">3</div>
+                        <div class="feature-text">
+                            <h3>Гарантия</h3>
+                            <p>Гарантия на оборудование и работы до 3 лет</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">4</div>
+                        <div class="feature-text">
+                            <h3>Поддержка</h3>
+                            <p>Круглосуточная техническая поддержка</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Статистика -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>23+</h3>
+                    <p>Года опыта</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1000+</h3>
+                    <p>Реализованных проектов</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Сотрудников</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Техническая поддержка</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Команда -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">Наша команда</h2>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-img">Фото</div>
+                    <div class="team-info">
+                        <h3>Иван Петров</h3>
+                        <p>Генеральный директор</p>
+                        <p>Основатель компании, эксперт с 25-летним опытом</p>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-img">Фото</div>
+                    <div class="team-info">
+                        <h3>Алексей Смирнов</h3>
+                        <p>Технический директор</p>
+                        <p>Специалист по системам видеонаблюдения</p>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-img">Фото</div>
+                    <div class="team-info">
+                        <h3>Елена Козлова</h3>
+                        <p>Менеджер проектов</p>
+                        <p>Координация работ, сопровождение клиентов</p>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-img">Фото</div>
+                    <div class="team-info">
+                        <h3>Дмитрий Иванов</h3>
+                        <p>Ведущий инженер</p>
+                        <p>Монтаж и настройка систем безопасности</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <p>Телефон: +7 (123) 456-78-90</p>
+                    <p>Email: info@abak2000.ru</p>
+                    <p>Адрес: г. Москва, ул. Безопасная, д. 2000</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Компания</h3>
+                    <a href="about.html">О нас</a>
+                    <a href="#">Наша команда</a>
+                    <a href="#">Лицензии</a>
+                    <a href="#">Отзывы</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Документы</h3>
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Договор оферты</a>
+                    <a href="#">Реквизиты</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 ABAK2000. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
