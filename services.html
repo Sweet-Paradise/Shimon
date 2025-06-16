@@ -9,22 +9,22 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
         }
         
         body {
             color: #333;
             line-height: 1.6;
+            background-color: #fff;
         }
         
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
         
-        /* Шапка сайта */
         header {
             background-color: #fff;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -70,7 +70,6 @@
             color: #005baa;
         }
         
-        /* Основной контент */
         .page-header {
             background-color: #005baa;
             color: white;
@@ -101,6 +100,7 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             border-radius: 10px;
             overflow: hidden;
+            background-color: #fff;
         }
         
         .service-icon {
@@ -117,7 +117,6 @@
         .service-content {
             flex: 1;
             padding: 30px;
-            background-color: white;
         }
         
         .service-content h3 {
@@ -145,7 +144,6 @@
             background-color: #e05d00;
         }
         
-        /* Футер */
         footer {
             background-color: #003366;
             color: white;
@@ -195,7 +193,6 @@
             color: #ccc;
         }
         
-        /* Адаптивность */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
@@ -226,7 +223,6 @@
     </style>
 </head>
 <body>
-    <!-- Шапка сайта -->
     <header>
         <div class="container header-container">
             <a href="index.html" class="logo">ABAK2000</a>
@@ -241,7 +237,6 @@
         </div>
     </header>
 
-    <!-- Заголовок страницы -->
     <section class="page-header">
         <div class="container">
             <h1>Наши услуги</h1>
@@ -249,7 +244,6 @@
         </div>
     </section>
 
-    <!-- Список услуг -->
     <section class="services-section">
         <div class="container">
             <h2 class="section-title">Полный спектр услуг безопасности</h2>
@@ -296,7 +290,6 @@
         </div>
     </section>
 
-    <!-- Футер -->
     <footer>
         <div class="container">
             <div class="footer-container">
